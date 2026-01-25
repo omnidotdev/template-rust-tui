@@ -1,6 +1,6 @@
-# 🖥️ {{project-name}}
+# 🖥️ Rust TUI Template
 
-{{description}}
+Terminal user interface application built with [Ratatui](https://ratatui.rs).
 
 ## Features
 
