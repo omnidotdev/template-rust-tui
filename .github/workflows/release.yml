@@ -72,7 +72,7 @@ jobs:
           tar -czvf {{binary-name}}-${{ matrix.target }}.tar.gz {{binary-name}}
           mv {{binary-name}}-${{ matrix.target }}.tar.gz ../../../
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: {{binary-name}}-${{ matrix.target }}
           path: {{binary-name}}-${{ matrix.target }}.tar.gz
@@ -91,7 +91,7 @@ jobs:
           VERSION=$(grep '^version' Cargo.toml | head -1 | sed 's/.*"\(.*\)".*/\1/')
           echo "version=$VERSION" >> $GITHUB_OUTPUT
       - name: Download all artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           path: artifacts
       - name: Extract changelog for version
