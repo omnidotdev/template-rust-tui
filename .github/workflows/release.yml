@@ -19,7 +19,7 @@ jobs:
     outputs:
       published: ${{ steps.changesets.outputs.published }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
         with:
           # pin Bun so the toolchain does not drift with floating latest
@@ -57,7 +57,7 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.target }}
@@ -87,7 +87,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Get version from Cargo.toml
         id: version
         run: |
